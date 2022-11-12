@@ -4,101 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/framework_style.css">
-    <link rel="stylesheet" href="css/products_hub_style.css">
+    <link rel="stylesheet" href="css/css/framework_style.css">
     <link rel="icon" type="image/x-icon" href="/images/clairmont.svg">
-    <script src="js/nav.js" defer></script>
     <title>Clairemont Comics</title>
 </head>
 <body>
     <container>
         <!--Header Markup-->
         <header>
+            <h2 class="logo">
+                <a href="index.html">
+                    <img src="images/clairmont.svg" alt="logo" style="height: 1.5em; vertical-align:middle;">
+                    Clairemont Comics
+                </a>
+            </h2>
+            <input type="checkbox" id="nav_toggle" class="nav_toggle" style="height: 1em;">
             <nav>
-                <h2 class="logo">
-                    <a href="index.html">
-                        <img src="images/clairmont.svg" alt="logo" style="height: 57px; vertical-align:middle;">
-                        Clairemont Comics
-                    </a>
-                </h2>
-                <div class="menu_toggle" id="mobile_menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav_menu">
-                    <li><a href='products_hub.php' class="nav_links">Products</a></li>
-                    <li><a href='events.html' class="nav_links">Events</a></li>
-                    <li><a href='gallery.php'class="nav_links">Gallery</a></li>
-                    <li><a href='faq.html' class="nav_links">FAQ</a></li>
-                    <li><a href='contact_us.php' class="nav_links">Contact Us</a></li>
+                <ul>
+                    <li><a href='products_hub.html'>Products</a></li>
+                    <li><a href='events.html'>Events</a></li>
+                    <li><a href='gallery.html'>Gallery</a></li>
+                    <li><a href='faq.html'>FAQ</a></li>
+                    <li><a href='contact_us.html'>Contact Us</a></li>
                 </ul>
             </nav>
+            <label for="nav_toggle" class="nav_toggle_label">
+                <span></span>
+            </label>
         </header>
 
         <left-space></left-space>
         <div class="border_left"></div>
         <!--Main Content Markup-->
         <content>
-            <h1>Products</h1>
-            <p class="page_desc">Here are some of the many product lines we carry in store</p>
-            <div class = "product_container">
-
-            <?php
-            DEFINE ('DB_USER', 'root');
-            DEFINE ('DB_PASSWORD', '');
-            DEFINE ('DB_HOST', 'localhost');
-            DEFINE ('DB_NAME', 'test1');
-
-            $dbc = @mysqli_connect(DB_HOST,DB_USER, DB_PASSWORD, DB_NAME) or die('Could not connect!'.mysqli_connect_error());
-            $query = "SELECT product_image_path, product_name, product_link FROM product_hub";
-                    $response = @mysqli_query($dbc, $query);           
-                    if ($response){
-            
-                        while($row = mysqli_fetch_array($response)){
-            
-                            echo '<div class="card">
-                                    <a href="'.$row['product_link'].'">
-                                        <img class="product_logo" src="' . $row['product_image_path'] . '" alt="">
-                                        <h2>'. $row['product_name'] . '</h2>
-                                    </a>
-
-                            </div>';
-
-                        }
-
-                    }
-                    // else{
-                    // 	echo "No connection!";
-                    // }
-            ?>
-            </div>
-                <!-- <div class="card">
-                    <a href="warhammer_40k.html">
-                        <img class="product_logo" src="images/Warhammer_40k.jpeg" alt="Warhamer_40k">
-                        <h2>Warhammer 40k</h2>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="d&d.html">
-                        <img class="product_logo" src="images/Dungeon_and_Dragons.jpeg" alt="Warhamer_40k">
-                        <h2>Dungeons and Dragons</h2>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="warhammer_age_of_sigmar.html">
-                        <img class="product_logo" src="images/Warhammer_Age_of_Sigmar.png" alt="Warhamer_40k">
-                        <h2>Warhammer Age of Sigmar</h2>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="magic_the_gathering.html">
-                        <img class="product_logo" src="images/Magic_the_gathering.png" alt="Warhamer_40k">
-                        <h2>Magic the Gathering</h2>
-                    </a>
-                </div>-->
-             
-        </content> 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </content>
         <div class="border_right"></div>
         <right-space></right-space>
 
